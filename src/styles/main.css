@@ -14,11 +14,9 @@ ul {
 
 body,
 html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     background-color: #ffffff;
-    min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
 }
@@ -45,8 +43,8 @@ html {
 }
 
 .navbar .navbar-brand img {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
 }
 
 .navbar .navbar-menu {
@@ -56,7 +54,7 @@ html {
 }
 
 .navbar .navbar-menu p {
-    font-size: 35px;
+    font-size: 27px;
     background-color: #f0b452;
     color: #0f0f0f;
 }
@@ -88,6 +86,81 @@ html {
     width: 100%;
     margin-top: 10px;
     z-index: 99;
+}
+
+
+/* membuat header */
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../public/img/hero-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.header .containt-header {
+    display: block;
+    margin-top: 90px;
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.header .containt-header .header-title h1 {
+    display: inline-block;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.header .header-description {
+    display: inline-block;
+    color: #d6d3d3;
+    margin: 15px auto;
+    text-align: justify;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 90%;
+    font-size: 15px;
+    font-weight:500;
+}
+
+.header .header-tombol a {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    background-color: #fa9311;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+/* Membuat main-content */
+.main-title h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    font-size: 1.8em;
+}
+
+
+/* Membuat footer */
+footer {
+    margin-top: 100px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: #0f0f0f;
+}
+
+footer p {
+    padding: 40px;
+    color: #ffffff;
 }
 
 
@@ -128,6 +201,8 @@ html {
     .navbar .navbar-brand {
         margin-left: 75px;
     }
+    /* membuat main content */
+
 }
 
 @media (min-width: 768px) {

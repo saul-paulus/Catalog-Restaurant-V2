@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import InitialMenu from '../utils/initial-menu';
+import UrlParse from '../routes/url.parser';
+import routes from '../routes/routes';
 
 class App {
   constructor({
@@ -20,6 +22,14 @@ class App {
     });
 
     // kita bisa inisialisasi komponen lain bila ada
+  }
+
+  async renderPage() {
+    const url = UrlParse.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+
+    await page.afterRender();
   }
 }
 

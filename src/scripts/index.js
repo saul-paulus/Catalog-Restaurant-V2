@@ -8,3 +8,11 @@ const app = new App({
   menu: document.querySelector('#navigation-menu'),
   content: document.querySelector('#container-content'),
 });
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+});
