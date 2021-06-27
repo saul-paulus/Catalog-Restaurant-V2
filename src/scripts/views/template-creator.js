@@ -1,4 +1,5 @@
-/* eslint-disable import/prefer-default-export */
+import CONFIG from '../globals/config';
+
 const createHeader = () => `
 <div class="header-title">
     <h1>Meet, Eat & Enjoy</h1>
@@ -12,4 +13,18 @@ const createHeader = () => `
 </div>     
 `;
 
-export { createHeader };
+const createListKatalog = (listKatalog) => `
+<div class="main-card">
+    <div class="containt-img">
+        <img src="${CONFIG.BASE_URL_IMG_S}/${listKatalog.pictureId}">
+        <div class="tombol-detail">
+            <a class="text-detail" href="${`/#/detail/${listKatalog.id}`}" target="_blank">Details</a>
+        </div>
+    </div>
+    <h1>Area of ${listKatalog.city}</h1>
+    <p class="rating"><span class="fa fa-star checked"></span> ${listKatalog.rating}</p>
+    <p class="description">${listKatalog.description}</p>
+</div>
+`;
+
+export { createHeader, createListKatalog };

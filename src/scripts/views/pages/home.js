@@ -1,4 +1,7 @@
-const { createHeader } = require('../template-creator');
+/* eslint-disable no-console */
+import KatalogRestaurantSource from '../../data/katalogRestApi-source';
+
+const { createHeader, createListKatalog } = require('../template-creator');
 
 const Home = {
   async render() {
@@ -14,25 +17,22 @@ const Home = {
           <h1>Explore Our Best Restaurant</h1>
           <span></span>
         </div>
-        <div class="containt-card">
-          <div class="main-card">
-            <div class="container-img">
-              <img src="./img/hero-header.jpg">
-              <div class="tombol-detail">
-                 <a class="text-detail" href="#" target="_blank">Details</a>
-              </div>
-            </div>
-            <h1>Area of ambon</h1>
-            <p class="ranting"><span class="fa fa-star checked"></span> rating</p>
-            <p class="description">lorem5</p>
-          </div>
+        <div class="containt-card" id="containt-card">
+         
         </div>
       </main>
     `;
   },
-
   async afterRender() {
+    const katalogRestaurants = await KatalogRestaurantSource.listKatalogRestaurant();
+
     const containHeader = document.querySelector('#containt-header');
+    const containtCard = document.querySelector('#containt-card');
+
+    console.log(katalogRestaurants);
+    katalogRestaurants.forEach((katalogRestaurant) => {
+      containtCard.innerHTML += createListKatalog(katalogRestaurant);
+    });
     containHeader.innerHTML = createHeader();
   },
 };

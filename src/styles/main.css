@@ -16,7 +16,7 @@ body,
 html {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #ffffff;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -45,6 +45,7 @@ html {
 .navbar .navbar-brand img {
     width: 40px;
     height: 40px;
+    display: block;
 }
 
 .navbar .navbar-menu {
@@ -140,6 +141,12 @@ html {
 }
 
 /* Membuat main-content */
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-title h1{
     text-align: center;
     margin-top: 40px;
@@ -147,14 +154,109 @@ html {
     font-size: 1.8em;
 }
 
+.containt-card{
+    width: 90%;
+    border:1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.containt-card .main-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    margin: 20px;
+    transition: 0.4 all;
+    position: relative;
+    cursor: pointer;
+    border:1px solid green;
+}
+
+.containt-card .main-card:hover {
+    width: 95%;
+    height: 95%;
+}
+
+.containt-card .main-card .containt-img {
+    position: relative;
+    width: 100%;
+    height: 270px;
+}
+
+.containt-card .main-card .containt-img:hover img {
+    opacity: 0.5;
+}
+
+.containt-card .main-card .containt-img:hover .tombol-detail {
+    opacity: 1;
+    transition: 0.4s all;
+}
+
+.containt-card .main-card .containt-img .tombol-detail {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.containt-card .main-card .containt-img .tombol-detail .text-detail {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 16px 36px;
+}
+
+.containt-card .main-card .containt-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    backface-visibility: hidden;
+    opacity: 1;
+}
+
+.containt-card .main-card .containt-img img:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.2s all;
+}
+
+.containt-card .main-card h1 {
+    font-size: 1.3em;
+    padding: 10px;
+    background-color: #fa9311;
+    color: #0f0f0f;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.containt-card .main-card .rating {
+    font-size: 20px;
+    text-align: center;
+    color:#0f0f0f;
+    padding: 10px;
+    font-weight: 600;
+}
+.checked{
+    color: #f0b452;
+}
+
+.containt-card .main-card .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    text-align: justify;
+    color: #808080;
+}
 
 /* Membuat footer */
 footer {
     margin-top: 100px;
-    position: fixed;
     width: 100%;
-    bottom: 0;
-    text-align: center;
     background-color: #0f0f0f;
 }
 
@@ -162,8 +264,6 @@ footer p {
     padding: 40px;
     color: #ffffff;
 }
-
-
 
 /* MEmbuat responsive */
 
@@ -203,6 +303,21 @@ footer p {
     }
     /* membuat main content */
 
+    .containt-card{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        align-items: center;
+    }
+    .containt-card .main-card {
+        width: 87%;
+        height: 90%;
+        transition: 0.4s all;
+    }
+    
+    .containt-card .main-card:hover {
+        width: 90%;
+        height: 93%;
+    }
 }
 
 @media (min-width: 768px) {
