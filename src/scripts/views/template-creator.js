@@ -27,4 +27,11 @@ const createListKatalog = (listKatalog) => `
 </div>
 `;
 
-export { createHeader, createListKatalog };
+const createDetailBreadcrumb = (details) => `
+<ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li>${details.city}</li>
+</ul>
+`;
+
+export { createHeader, createListKatalog, createDetailBreadcrumb };

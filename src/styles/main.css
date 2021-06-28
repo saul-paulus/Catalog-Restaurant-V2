@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -90,7 +91,7 @@ html {
 }
 
 
-/* membuat header */
+/* mendesain header */
 
 .header {
     display: flex;
@@ -112,6 +113,7 @@ html {
 }
 
 .header .containt-header .header-title h1 {
+    font-family: 'Castoro', serif;
     display: inline-block;
     font-size: 2em;
     color: #ffffff;
@@ -120,6 +122,7 @@ html {
 .header .header-description {
     display: inline-block;
     color: #d6d3d3;
+    font-family: 'Castoro', serif;
     margin: 15px auto;
     text-align: justify;
     margin-bottom: 20px;
@@ -140,11 +143,12 @@ html {
     font-size: 18px;
 }
 
-/* Membuat main-content */
+/* mendesain main-content */
 .main-content{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .main-title h1{
@@ -250,10 +254,114 @@ html {
     text-overflow: ellipsis;
     padding: 10px;
     text-align: justify;
-    color: #808080;
+    color: #727070;
 }
 
-/* Membuat footer */
+/* mendesain detail */
+.containt-breadcrumb {
+    margin-top: 80px;
+}
+.containt-breadcrumb ul.breadcrumb {
+    padding: 10px 16px;
+    background-color: rgb(223, 219, 219);
+    border-bottom: 1px solid #a0a0a0;
+}
+  
+.containt-breadcrumb  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+.containt-breadcrumb  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+.containt-breadcrumb ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+.containt-breadcrumb  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+/* mendesain detail */
+.containt-header-detail{
+    background-color: #f0eeee;
+}
+
+.detail-header {
+    border:1px solid green;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.detail-hero{
+    width: 100%;
+    position: relative;
+    border:1px solid salmon;
+}
+.detail-hero img{
+    width: 100%;
+    border-bottom: 2px solid #808080;
+}
+.detail-hero .detail-rating{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 15px;
+}
+.containt-detail-title{
+    padding: 20px;
+    border:1px solid green;
+}
+
+.containt-detail-title .detail-title{
+    border: 1px solid blue;
+    margin-bottom: 22px;
+}
+.containt-detail-title .detail-title h1{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight:bold;
+}
+.containt-detail-title .detail-title h2{
+    font-size: 1.2em;
+}
+
+.containt-detail-title .detail-title p{
+    color: #3d3d3d;
+    font-style: italic;
+}
+.containt-detail-title .detail-description{
+    border:1px solid greenyellow;
+}
+.containt-detail-title .detail-description h2, .detail-categories h2{
+    padding-bottom: 5px;
+    font-size: 1.2em;
+}
+.containt-detail-title .detail-description p{
+    color: #3d3d3d;
+}
+.containt-detail-title .detail-categories{
+    border: 1px solid green;
+    margin-top: 15px;
+}
+
+.containt-detail-title .detail-categories ul li{
+    display: inline-block;
+    padding: 5px;
+    margin:5px;
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+/* mendesain footer */
 footer {
     margin-top: 100px;
     width: 100%;
@@ -265,7 +373,8 @@ footer p {
     color: #ffffff;
 }
 
-/* MEmbuat responsive */
+
+/* mendesain responsive */
 
 @media (min-width: 576px) {
     /*  */
@@ -301,7 +410,7 @@ footer p {
     .navbar .navbar-brand {
         margin-left: 75px;
     }
-    /* membuat main content */
+    /* mendesain main content */
 
     .containt-card{
         display: grid;
@@ -318,6 +427,13 @@ footer p {
         width: 90%;
         height: 93%;
     }
+    .detail-header {
+        border:1px solid green;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 768px) {
@@ -333,6 +449,17 @@ footer p {
     }
     .navbar .navbar-brand {
         margin-left: 140px;
+    }
+    .containt-header-detail{
+        width: 100%;
+        border:1px solid salmon;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .detail-header {
+        width: 80%;
+        grid-template-columns: 600px 1fr;
     }
 }
 

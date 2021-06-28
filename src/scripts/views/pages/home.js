@@ -18,7 +18,6 @@ const Home = {
           <span></span>
         </div>
         <div class="containt-card" id="containt-card">
-         
         </div>
       </main>
     `;
