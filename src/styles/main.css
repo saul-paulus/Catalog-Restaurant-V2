@@ -370,7 +370,7 @@ html {
 .detail-menus img{
     display: block;
     width: 100%;
-    height:220px;
+    height:240px;
     border-bottom: 1px solid #f0b452;
 }
 
@@ -409,7 +409,8 @@ html {
 }
 
 .containt-detail-review h1{
-    margin-bottom: 20px;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
 .containt-detail-review .review-card {
     width: 80%;
@@ -513,6 +514,9 @@ footer p {
         flex-direction: row;
         justify-content: space-evenly;
     }
+    .detail-menus img{
+        height:320px;
+    }
     .menu .menus-foods, .menu .menus-drink{
         width: 48%;
     }
@@ -553,6 +557,7 @@ footer p {
     .menu .menus-foods, .menu .menus-drink{
         width: 30%;
     }
+    
 }
 
 @media (min-width: 1400px) {

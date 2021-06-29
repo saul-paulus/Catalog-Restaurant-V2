@@ -2,6 +2,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import App from './views/app';
+import registerSw from './utils/registerSW';
 
 const app = new App({
   button: document.querySelector('#tombol-menu'),
@@ -15,4 +16,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  registerSw();
 });
