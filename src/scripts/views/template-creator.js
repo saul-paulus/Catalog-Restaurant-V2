@@ -34,4 +34,67 @@ const createDetailBreadcrumb = (details) => `
 </ul>
 `;
 
-export { createHeader, createListKatalog, createDetailBreadcrumb };
+const createDetailHeader = (details) => `
+<div class="containt-header-detail">
+    <div class ="detail-header">
+        <div class="detail-hero">
+            <img src="./img/hero-header.jpg" alt="img-detail" class="img-detail" />
+            <p class="detail-rating"><span class="fa fa-star checked"></span> ${details.rating}</p>
+        </div>
+        <div class="containt-detail-title">
+            <div class="detail-title">
+                <h1>${details.name}</h1>
+                <h2>${details.city}</h2>
+                <p>${details.address}</p>
+            </div>
+            <div class="detail-description">
+                <h2>Description</h3>
+                <p>${details.description}</p>
+            </div>
+            <div class="detail-categories">
+              <h2>Categories</h2>
+            <ul>${details.categories.map((categorie) => `
+                <li>${categorie.name}</li>`).join('')}</ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="detail-menus">
+    <h1>Menu List</h1>
+    <div class="menu">
+        <div class="menus-foods">
+            <h2>Foods</h2>
+            <img src="./img/foods.jpeg" alt="img-foods">
+            <ul>${details.menus.foods.map((food) => `
+                <li>${food.name}</li>`).join('')}
+            </ul>
+        </div>
+        <div class="menus-drink">
+            <h2>Drinks</h2>
+            <img src="./img/drink.jpeg" alt="img-foods">
+            <ul>${details.menus.drinks.map((drink) => `
+            <li>${drink.name}</li>`).join('')}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="containt-detail-review">
+    <h1>Reviews</h1>
+
+    ${details.customerReviews.map((review) => `
+    <div class="review-card">
+        <img src="./img/avatar-review.png" alt="review-img" />
+        <div class="review">
+            <h3>${review.name}</h3>
+            <p class="review-description">${review.review}</p>
+            <p class="review-tgl">${review.date}</p>
+        </div> 
+    </div>
+    `)}
+</div>
+`;
+
+export {
+  createHeader, createListKatalog, createDetailBreadcrumb, createDetailHeader,
+};

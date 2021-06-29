@@ -160,7 +160,6 @@ html {
 
 .containt-card{
     width: 90%;
-    border:1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,7 +174,6 @@ html {
     transition: 0.4 all;
     position: relative;
     cursor: pointer;
-    border:1px solid green;
 }
 
 .containt-card .main-card:hover {
@@ -264,7 +262,6 @@ html {
 .containt-breadcrumb ul.breadcrumb {
     padding: 10px 16px;
     background-color: rgb(223, 219, 219);
-    border-bottom: 1px solid #a0a0a0;
 }
   
 .containt-breadcrumb  ul.breadcrumb li {
@@ -294,7 +291,6 @@ html {
 }
 
 .detail-header {
-    border:1px solid green;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -302,7 +298,6 @@ html {
 .detail-hero{
     width: 100%;
     position: relative;
-    border:1px solid salmon;
 }
 .detail-hero img{
     width: 100%;
@@ -319,11 +314,9 @@ html {
 }
 .containt-detail-title{
     padding: 20px;
-    border:1px solid green;
 }
 
 .containt-detail-title .detail-title{
-    border: 1px solid blue;
     margin-bottom: 22px;
 }
 .containt-detail-title .detail-title h1{
@@ -339,9 +332,9 @@ html {
     color: #3d3d3d;
     font-style: italic;
 }
-.containt-detail-title .detail-description{
+/* .containt-detail-title .detail-description{
     border:1px solid greenyellow;
-}
+} */
 .containt-detail-title .detail-description h2, .detail-categories h2{
     padding-bottom: 5px;
     font-size: 1.2em;
@@ -350,7 +343,6 @@ html {
     color: #3d3d3d;
 }
 .containt-detail-title .detail-categories{
-    border: 1px solid green;
     margin-top: 15px;
 }
 
@@ -361,6 +353,89 @@ html {
     background-color: #0f0f0f;
     color: #ffffff;
 }
+
+.detail-menus{
+    text-align: center;
+    width: 100%;
+}
+.detail-menus h1{
+    width:100%;
+    padding: 10px;
+}
+.detail-menus .menu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.detail-menus img{
+    display: block;
+    width: 100%;
+    height:220px;
+    border-bottom: 1px solid #f0b452;
+}
+
+.menu h2{
+    text-decoration: underline;
+    padding: 10px;
+    background-color: #f0b452;
+}
+
+.menu ul{
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.685);
+    padding: 20px;
+    background-color:#0f0f0f;
+    border: 1px solid #f0b452;
+
+}
+
+.menu ul li{
+    color:#ffffff;
+    font-size: 16px;
+    margin-left: 20px;
+    padding: 5px;
+    list-style:circle;
+    text-align: justify;
+ 
+}
+
+.containt-detail-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    height: 30%;
+    overflow: auto;
+}
+
+.containt-detail-review h1{
+    margin-bottom: 20px;
+}
+.containt-detail-review .review-card {
+    width: 80%;
+    display: flex;
+    margin: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0dddd;
+}
+
+.containt-detail-review .review-card img {
+    width: 40px;
+    height: 40px;
+    margin: 7px;
+}
+
+.containt-detail-review .review-card .review-description {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.containt-detail-review .review-card .review-tgl {
+    font-size: 15px;
+    color: #a5a3a3;
+}
+
 /* mendesain footer */
 footer {
     margin-top: 100px;
@@ -376,7 +451,7 @@ footer p {
 
 /* mendesain responsive */
 
-@media (min-width: 576px) {
+@media (min-width: 580px) {
     /*  */
     .navbar .navbar-navigation {
         position: relative;
@@ -428,12 +503,22 @@ footer p {
         height: 93%;
     }
     .detail-header {
-        border:1px solid green;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
     }
+    .detail-menus .menu{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .menu .menus-foods, .menu .menus-drink{
+        width: 48%;
+    }
+    .containt-detail-review .review-card {
+        width: 50%;
+    }
+    
 }
 
 @media (min-width: 768px) {
@@ -452,7 +537,6 @@ footer p {
     }
     .containt-header-detail{
         width: 100%;
-        border:1px solid salmon;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -460,6 +544,13 @@ footer p {
     .detail-header {
         width: 80%;
         grid-template-columns: 600px 1fr;
+    }
+    .detail-menus h1{
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .menu .menus-foods, .menu .menus-drink{
+        width: 30%;
     }
 }
 
