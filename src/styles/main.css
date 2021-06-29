@@ -438,6 +438,7 @@ html {
 
 /* mendesain footer */
 footer {
+    text-align: center;
     margin-top: 100px;
     width: 100%;
     background-color: #0f0f0f;
