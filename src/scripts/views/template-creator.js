@@ -18,7 +18,7 @@ const createListKatalog = (listKatalog) => `
     <div class="containt-img">
         <img src="${CONFIG.BASE_URL_IMG_S}/${listKatalog.pictureId}">
         <div class="tombol-detail">
-            <a class="text-detail" href="${`/#/detail/${listKatalog.id}`}" target="_blank">Details</a>
+            <a class="text-detail" href="${`/#/detail/${listKatalog.id}`}">Details</a>
         </div>
     </div>
     <h1>Area of ${listKatalog.city}</h1>
