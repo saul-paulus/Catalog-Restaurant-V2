@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import KatalogRestaurantSource from '../../data/katalogRestApi-source';
 import { createDetailBreadcrumb, createDetailHeader } from '../template-creator';
-
 import URLParse from '../../routes/url.parser';
 
 const Detail = {
@@ -11,6 +10,7 @@ const Detail = {
         <div id="containt-breadcrumb"></div>
       </div>
       <div id="containt-header"></div>
+      <div id="likeButtonContainer"></div>
       
     `;
   },
@@ -20,14 +20,9 @@ const Detail = {
 
     const containtBreadcrumb = document.querySelector('#containt-breadcrumb');
     const containtHeader = document.querySelector('#containt-header');
-
     const getDetailRestaurant = getDetailById.restaurant;
-
     containtBreadcrumb.innerHTML = createDetailBreadcrumb(getDetailRestaurant);
-
     containtHeader.innerHTML += createDetailHeader(getDetailRestaurant);
-
-    console.log(getDetailRestaurant);
   },
 };
 export default Detail;

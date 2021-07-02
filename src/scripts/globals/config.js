@@ -4,7 +4,10 @@ const CONFIG = {
   BASE_URL_IMG_M: 'https://restaurant-api.dicoding.dev/images/medium',
   BASE_URL_IMG_L: 'https://restaurant-api.dicoding.dev/images/large',
   DEFAULT_LANGUAGE: 'en-us',
-  CACHE_NAME: 'KatalogRestaurantPwa-v1',
+  CACHE_NAME: new Date().toDateString(),
+  DATABASE_NAME: 'katalog-restaurant-pwa',
+  DATABASE_VERSION: 1,
+  OBJECT_STORE_NAME: 'katalogRestaurant',
 };
 
 export default CONFIG;
