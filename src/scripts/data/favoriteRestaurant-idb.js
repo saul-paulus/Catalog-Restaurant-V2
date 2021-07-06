@@ -1,4 +1,6 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable consistent-return */
+/* eslint-disable no-useless-return */
 import { openDB } from 'idb';
 import CONFIG from '../globals/config';
 
@@ -11,16 +13,22 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 });
 
 const FavoriteRestaurantIdb = {
-  async getMovie(id) {
+
+  async getKatalogRestaurant(id) {
+    if (!id) return;
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
-  async getAllMovies() {
+  async getAllKatalogRestaurant() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
-  async putMovie(movie) {
-    return (await dbPromise).put(OBJECT_STORE_NAME, movie);
+  async putKatalogRestaurant(katalogRestaurant) {
+    if (!katalogRestaurant.hasOwnProperty('id')) {
+      return;
+    }
+    return (await dbPromise).put(OBJECT_STORE_NAME, katalogRestaurant);
   },
-  async deleteMovie(id) {
+  async deleteKatalogRestaurant(id) {
+    if (!id) return;
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
 };

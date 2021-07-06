@@ -242,6 +242,10 @@ html {
     padding: 10px;
     font-weight: 600;
 }
+.favorite-card{
+    margin-top: 120px;
+}
+
 .checked{
     color: #f0b452;
 }

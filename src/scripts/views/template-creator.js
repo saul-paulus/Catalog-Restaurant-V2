@@ -82,7 +82,6 @@ const createDetailHeader = (details) => `
 
 <div class="containt-detail-review">
     <h1>Reviews</h1>
-
     ${details.customerReviews.map((review) => `
     <div class="review-card">
         <img src="./img/avatar-review.png" alt="review-img" />
@@ -97,13 +96,13 @@ const createDetailHeader = (details) => `
 `;
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this katalogRestaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this katalogRestaurant"" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;

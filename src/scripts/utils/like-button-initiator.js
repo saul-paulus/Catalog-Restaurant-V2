@@ -1,49 +1,48 @@
+/* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
-import FavoriteRestaurantIdb from '../../scripts/data/favoriteRestaurant-idb';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
+import FavoriteRestaurantIDb from '../data/favoriteRestaurant-idb';
+import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/template-creator';
 
 const LikeButtonInitiator = {
-  async init({ likeButtonContainer, movie }) {
+  async init({ likeButtonContainer, katalogRestaurant }) {
     this._likeButtonContainer = likeButtonContainer;
-    this._movie = movie;
+    // this._favoriteRestaurant = favoriteRestaurant;
+    this._katalogRestaurant = katalogRestaurant;
 
     await this._renderButton();
   },
 
   async _renderButton() {
-    const { id } = this._movie;
+    const { id } = this._katalogRestaurant;
 
-    if (await this._isMovieExist(id)) {
+    if (await this._isKatalogRestaurantExist(id)) {
       this._renderLiked();
     } else {
       this._renderLike();
     }
   },
 
-  async _isMovieExist(id) {
-    const movie = await FavoriteMovieIdb.getMovie(id);
-    return !!movie;
+  async _isKatalogRestaurantExist(id) {
+    const katalogRestaurant = await FavoriteRestaurantIDb.getKatalogRestaurant(id);
+    return !!katalogRestaurant;
   },
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
-
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteMovieIdb.putMovie(this._movie);
+      await FavoriteRestaurantIDb.putKatalogRestaurant(this._katalogRestaurant);
       this._renderButton();
     });
   },
 
   _renderLiked() {
     this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
-
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteMovieIdb.deleteMovie(this._movie.id);
+      await FavoriteRestaurantIDb.deleteKatalogRestaurant(this._katalogRestaurant.id);
       this._renderButton();
     });
   },
 };
-
 export default LikeButtonInitiator;
