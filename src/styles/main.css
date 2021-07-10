@@ -49,16 +49,20 @@ html {
     display: block;
 }
 
-.navbar .navbar-menu {
+.navbar .navbar-menu { 
     margin-right: 20px;
-    display: block;
+    display: inline-block;
     cursor: pointer;
 }
-
-.navbar .navbar-menu p {
+.navbar .navbar-menu button{
+    width:44px;
+    height:44px;
+    display:block;
     font-size: 27px;
     background-color: #f0b452;
     color: #0f0f0f;
+    border-radius: 8px;
+    border: none;
 }
 
 .navbar .navbar-navigation {
@@ -90,9 +94,7 @@ html {
     z-index: 99;
 }
 
-
 /* mendesain header */
-
 .header {
     display: flex;
     justify-content: center;
@@ -235,6 +237,13 @@ html {
     top: 0;
 }
 
+.containt-card .main-card .name{
+    background-color:#0f0f0f;
+    color: #ffffff;
+    padding:10px;
+    font-size:18px;
+
+}
 .containt-card .main-card .rating {
     font-size: 20px;
     text-align: center;
@@ -472,7 +481,20 @@ footer p {
     justify-content: center;
 }
 
-
+/*tombol skip link*/
+.skip-link {
+   position: absolute;
+   top: -40px;
+   left: 0;
+   background-color: #bf1722;
+   color: white;
+   padding: 8px;
+   z-index: 100;
+}
+ 
+.skip-link:focus {
+   top: 0;
+}
 /* mendesain responsive */
 
 @media (min-width: 580px) {

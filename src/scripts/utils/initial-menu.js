@@ -1,25 +1,25 @@
 /* eslint-disable no-underscore-dangle */
 const InitialMenu = {
-  init({ button, menu, content }) {
+  init ({ button, menu, content }) {
     button.addEventListener('click', (event) => {
-      this._toggleMenu(event, menu);
-    });
+      this._toggleMenu(event, menu)
+    })
     content.addEventListener('click', (event) => {
-      this._closeMenu(event, menu);
-    });
+      this._closeMenu(event, menu)
+    })
   },
 
-  _toggleMenu(event, menu) {
-    event.stopPropagation();
+  _toggleMenu (event, menu) {
+    event.stopPropagation()
 
-    menu.classList.toggle('open');
+    menu.classList.toggle('open')
   },
 
-  _closeMenu(event, menu) {
-    event.stopPropagation();
+  _closeMenu (event, menu) {
+    event.stopPropagation()
 
-    menu.classList.remove('open');
-  },
-};
+    menu.classList.remove('open')
+  }
+}
 
-export default InitialMenu;
+export default InitialMenu

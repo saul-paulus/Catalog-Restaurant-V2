@@ -8,7 +8,7 @@ const CONFIG = {
   CACHE_NAME: new Date().toDateString(),
   DATABASE_NAME: 'katalog-restaurant-pwa',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: 'katalogRestaurant',
-};
+  OBJECT_STORE_NAME: 'katalogRestaurant'
+}
 
-export default CONFIG;
+export default CONFIG

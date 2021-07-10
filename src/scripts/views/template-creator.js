@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import CONFIG from '../globals/config';
+import CONFIG from '../globals/config'
 
 const createHeader = () => `
 <div class="header-title">
@@ -12,10 +12,10 @@ const createHeader = () => `
 <div class="header-tombol">
     <a href="">Our recomendation</a>
 </div>     
-`;
+`
 
 const createListKatalog = (listKatalog) => `
-<div class="main-card">
+<div class="main-card" id="main-card">
     <div class="containt-img">
         <img src="${CONFIG.BASE_URL_IMG_S}/${listKatalog.pictureId}">
         <div class="tombol-detail">
@@ -23,17 +23,18 @@ const createListKatalog = (listKatalog) => `
         </div>
     </div>
     <h1>Area of ${listKatalog.city}</h1>
+    <p class="name">${listKatalog.name}</p>
     <p class="rating"><span class="fa fa-star checked"></span> ${listKatalog.rating}</p>
     <p class="description">${listKatalog.description}</p>
 </div>
-`;
+`
 
 const createDetailBreadcrumb = (details) => `
 <ul class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li>${details.city}</li>
 </ul>
-`;
+`
 
 const createDetailHeader = (details) => `
 <div class="containt-header-detail">
@@ -93,20 +94,20 @@ const createDetailHeader = (details) => `
     </div>
     `)}
 </div>
-`;
+`
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this katalogRestaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
-`;
+`
 
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this katalogRestaurant"" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
-`;
+`
 
 export {
-  createHeader, createListKatalog, createDetailBreadcrumb, createDetailHeader, createLikeButtonTemplate, createLikedButtonTemplate,
-};
+  createHeader, createListKatalog, createDetailBreadcrumb, createDetailHeader, createLikeButtonTemplate, createLikedButtonTemplate
+}

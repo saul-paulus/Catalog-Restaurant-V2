@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import KatalogRestaurantSource from '../../data/katalogRestApi-source';
+import KatalogRestaurantSource from '../../data/katalogRestApi-source'
 
-const { createHeader, createListKatalog } = require('../template-creator');
+const { createHeader, createListKatalog } = require('../template-creator')
 
 const Home = {
-  async render() {
+  async render () {
     return `
     <!-- membuat header -->
     <header class="header">
@@ -20,20 +20,20 @@ const Home = {
         <div class="containt-card" id="containt-card">
         </div>
       </main>
-    `;
+    `
   },
-  async afterRender() {
-    const katalogRestaurants = await KatalogRestaurantSource.listKatalogRestaurant();
+  async afterRender () {
+    const katalogRestaurants = await KatalogRestaurantSource.listKatalogRestaurant()
 
-    const containHeader = document.querySelector('#containt-header');
-    const containtCard = document.querySelector('#containt-card');
+    const containHeader = document.querySelector('#containt-header')
+    const containtCard = document.querySelector('#containt-card')
 
-    console.log(katalogRestaurants);
+    console.log(katalogRestaurants)
     katalogRestaurants.forEach((katalogRestaurant) => {
-      containtCard.innerHTML += createListKatalog(katalogRestaurant);
-    });
-    containHeader.innerHTML = createHeader();
-  },
-};
+      containtCard.innerHTML += createListKatalog(katalogRestaurant)
+    })
+    containHeader.innerHTML = createHeader()
+  }
+}
 
-export default Home;
+export default Home
