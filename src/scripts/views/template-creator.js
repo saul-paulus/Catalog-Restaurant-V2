@@ -10,7 +10,7 @@ const createHeader = () => `
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit quae dicta? Perferendis vel iste dolore quos eligendi qui nihil assumenda voluptatum, id, praesentium inventore! Minima, quod. Aspernatur, quae blanditiis.</p>
 </div>
 <div class="header-tombol">
-    <a href="">Our recomendation</a>
+    <p>Our recomendation</p>
 </div>     
 `
 
